@@ -36,7 +36,7 @@ def get_Party(party_id):
     party=PartyModel().get_Party(party_id)
     if party:
         return make_response(jsonify({
-            'message':'Ok',
+            'message':'Okey',
             'Party':party
         }), 200)
     else:
