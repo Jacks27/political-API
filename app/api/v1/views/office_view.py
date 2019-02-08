@@ -26,10 +26,10 @@ def getAllOffice():
 
 @my_v1.route('/get_a_specific_office/<int:id>', methods=['GET'])
 def getAsingleOffice(id):
-    office = OfficeModel().getoffice(id)
-    return make_response(jsonify({
-        "msg":"Ok",
-        'party': office
-        }), 200)
+    party_id=isinstance(id, int)
+    if party_id:
+        office = OfficeModel().getoffice(id)
+        return make_response(jsonify({"msg":"Ok",'party': office }), 200)
+    return make_response(jsonify({"msg":"That is not correct id",'party': party_id }), 404)
 
 
