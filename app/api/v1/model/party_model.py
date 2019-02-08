@@ -16,7 +16,8 @@ class PartyModel:
         return party
 
     def get_All_Parties(self):
-        return self.party
+        if self.party:
+            return self.party
 
     def get_Party(self, party_id):
         if self.party:
