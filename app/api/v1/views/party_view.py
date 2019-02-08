@@ -26,7 +26,7 @@ def get_all_p():
         return make_response(jsonify({
                 "msg":"Ok",
                 'party': parties        
-        }))
+        }), 200)
     return make_response(jsonify({
         "msg": "No party found",
     }), 404)
