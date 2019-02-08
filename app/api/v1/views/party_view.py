@@ -22,10 +22,14 @@ def create_party():
 def get_all_p():
     """return all parties """
     parties= PartyModel().get_All_Parties()
-    return make_response(jsonify({
+    if parties:
+        return make_response(jsonify({
                 "msg":"Ok",
                 'party': parties        
-    }))
+        }), 200)
+    return make_response(jsonify({
+        "msg": "No party found",
+    }), 404)
 
 @my_v1.route('/get_party/<int:party_id>', methods=['GET'])
 def get_Party(party_id):
