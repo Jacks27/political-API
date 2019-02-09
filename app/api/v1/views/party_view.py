@@ -57,6 +57,7 @@ def remove_party(party_id):
 
 @my_v1.route('/party/<int:party_id>', methods = ['PATCH'])
 def Update_party(party_id):
+    """the function check if the id is int"""
     
     if isinstance(party_id, int):
         for party in parties_list:
