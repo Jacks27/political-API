@@ -55,24 +55,30 @@ def remove_party(party_id):
             'message':'Error party could not be deleted'
         }))
 
-@my_v1.route('/update_party/<int:party_id>', methods = ['PATCH'])
+@my_v1.route('/party/<int:party_id>', methods = ['PATCH'])
 def Update_party(party_id):
-    for party in parties_list:
-        if party['party_id'] == party_id:
-            data = request.get_json()
-            party['name'] = data['name']
-            return make_response(jsonify({
-                'msg':"Success"
-            }), 200)
+    """the function check if the id is int"""
+    
+    if isinstance(party_id, int):
+        for party in parties_list:
+            if party['party_id'] == party_id:
+                data = request.get_json()
+                party['name'] = data['name']
+                return make_response(jsonify({
+                    'msg':"Success"
+                }), 200)
 
-            update_party = {
-                new_name['name']: data['name']
-            }
-            parties_list.append(update_party)
-            return make_response(jsonify({
-                "status": 200,
-                'success': "updated party {}".format(update_party)
-            }))
+                update_party = {
+                    new_name['name']: data['name']
+                }
+                parties_list.append(update_party)
+                return make_response(jsonify({
+                    "status": 200,
+                    'success': "updated party {}".format(update_party)
+                }))
+    return make_response(jsonify({
+            'error': "Enter the collect id"
+    }), 404)
 
         
 
