@@ -2,7 +2,7 @@ from flask import Flask, Blueprint, request, make_response, jsonify
 import json
 from app.api.v1.model.party_model import PartyModel, parties_list
 
-my_v1= Blueprint('v1',__name__, url_prefix='/api/v1')
+my_v1=Blueprint('party',__name__, url_prefix='/api/v1')
 
 
 
@@ -18,7 +18,7 @@ def create_party():
         'msg':"Success"
     }), 201)
 
-@my_v1.route('/all_parties', methods=['GET'])
+@my_v1.route('/party', methods=['GET'])
 def get_all_p():
     """return all parties """
     parties= PartyModel().get_All_Parties()
@@ -31,7 +31,7 @@ def get_all_p():
         "msg": "No party found",
     }), 404)
 
-@my_v1.route('/get_party/<int:party_id>', methods=['GET'])
+@my_v1.route('/party/<int:party_id>', methods=['GET'])
 def get_Party(party_id):
     party=PartyModel().get_Party(party_id)
     if party:
@@ -43,7 +43,7 @@ def get_Party(party_id):
         return make_response(jsonify({
             'message':'Error no such party'
         }))
-@my_v1.route('/remove_party/<int:party_id>', methods=['DELETE'])
+@my_v1.route('/party/<int:party_id>', methods=['DELETE'])
 def remove_party(party_id):
     party=PartyModel().remove_party(party_id)
     if party:
