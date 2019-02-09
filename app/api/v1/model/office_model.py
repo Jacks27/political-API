@@ -15,10 +15,10 @@ class OfficeModel:
     def get_all_office(self):
         return self.offices
 
-    def getoffice(self, office_id):
+    def getoffice(self, id):
         if self.offices:
             for office_n in self.offices:
-                if office_n.get('office_type') == office_id:
+                if office_n.get('id') == id:
                     return office_n 
 
         

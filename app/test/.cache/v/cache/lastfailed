@@ -1,0 +1,9 @@
+{
+  "test_office.py::PoliticoV1BaseTest::test_create_an_office": true, 
+  "test_office.py::PoliticoV1BaseTest::test_get_office_by_id": true, 
+  "test_party.py::PoliticalTests::test_create_party": true, 
+  "test_party.py::PoliticalTests::test_delete_party_by_id": true, 
+  "test_party.py::PoliticalTests::test_get_all_parties": true, 
+  "test_party.py::PoliticalTests::test_get_specific_party": true, 
+  "test_party.py::PoliticalTests::test_party_updated": true
+}
