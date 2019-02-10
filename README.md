@@ -44,8 +44,6 @@ Use pytest to run: `pytest --cov=app`
 
 # Heroku host
 
-https://politicov1.herokuapp.com
-
 ## Built With
 * [Flask-Api](http://flask.pocoo.org/docs/1.0/api/) -  The web framework used
 * [Pip](https://pypi.python.org/pypi/pip) -  Dependency Management
