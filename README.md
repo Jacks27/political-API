@@ -1,6 +1,6 @@
 
 
-# Politico-API [![Coverage Status](https://coveralls.io/repos/github/Jacks27/political-API/badge.svg?branch=develop)](https://coveralls.io/github/Jacks27/political-API?branch=develop) <a href="https://codeclimate.com/github/Jacks27/political-API/maintainability"><img src="https://api.codeclimate.com/v1/badges/a7932f0434eaf003abed/maintainability" /></a>
+# Politico-API [![Build Status](https://travis-ci.org/Jacks27/political-API.svg?branch=develop)](https://travis-ci.org/Jacks27/political-API)[![Coverage Status](https://coveralls.io/repos/github/Jacks27/political-API/badge.svg?branch=develop)](https://coveralls.io/github/Jacks27/political-API?branch=develop) <a href="https://codeclimate.com/github/Jacks27/political-API/maintainability"><img src="https://api.codeclimate.com/v1/badges/a7932f0434eaf003abed/maintainability" /></a>
 ## Getting Started
 
 1) Clone the repository by doing: `git clone https://github.com/Jacks27/political-API`
