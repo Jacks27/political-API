@@ -1,6 +1,6 @@
 
 
-# Politico-API [![Build Status](https://travis-ci.org/Jacks27/political-API.svg?branch=develop)](https://travis-ci.org/Jacks27/political-API)[![Coverage Status](https://coveralls.io/repos/github/Jacks27/political-API/badge.svg?branch=develop)](https://coveralls.io/github/Jacks27/political-API?branch=develop) <a href="https://codeclimate.com/github/Jacks27/political-API/maintainability"><img src="https://api.codeclimate.com/v1/badges/a7932f0434eaf003abed/maintainability" /></a>
+# Politico-API[![Codacy Badge](https://api.codacy.com/project/badge/Grade/27b1ec70e2c346d0845483509eb8cf32)](https://www.codacy.com/app/Jacks27/political-API?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Jacks27/political-API&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/Jacks27/political-API.svg?branch=develop)](https://travis-ci.org/Jacks27/political-API)[![Coverage Status](https://coveralls.io/repos/github/Jacks27/political-API/badge.svg?branch=develop)](https://coveralls.io/github/Jacks27/political-API?branch=develop) <a href="https://codeclimate.com/github/Jacks27/political-API/maintainability"><img src="https://api.codeclimate.com/v1/badges/a7932f0434eaf003abed/maintainability" /></a>
 ## Getting Started
 
 1) Clone the repository by doing: `git clone https://github.com/Jacks27/political-API`
