@@ -16,8 +16,7 @@ class PartyModel:
         return party
 
     def get_All_Parties(self):
-        if self.party:
-            return self.party
+        return self.party
 
     def get_Party(self, party_id):
         if self.party:
@@ -32,9 +31,7 @@ class PartyModel:
             for party_n in self.party:
                 if party_n.get('party_id') == party_id:
                     self.party.remove(party_n)
-                    return True
-        
-        return False
+                    return party_n
 
     def update_party(self, party_id):
         if self.party:
