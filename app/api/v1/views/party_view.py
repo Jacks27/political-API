@@ -27,33 +27,36 @@ def get_all_p():
                 "msg":"Ok",
                 'party': parties        
         }), 200)
-    return make_response(jsonify({
-        "msg": "No party found",
-    }), 404)
+    else:
+        return make_response(jsonify({
+            "msg": "No party found",
+        }), 404)
 
 @my_v1.route('/party/<int:party_id>', methods=['GET'])
 def get_Party(party_id):
-    party=PartyModel().get_Party(party_id)
-    if party:
-        return make_response(jsonify({
-            'message':'Ok',
-            'Party':party
-        }), 200)
-    else:
-        return make_response(jsonify({
-            'message':'Error no such party'
-        }))
+    if isinstance(party_id, int):
+        party=PartyModel().get_Party(party_id)
+        if party:
+            return make_response(jsonify({
+                'message':'Ok',
+                'Party':party
+            }), 200)
+        
+    return make_response(jsonify({
+        'message':'Error no such party'
+    }), 404)
+
 @my_v1.route('/party/<int:party_id>', methods=['DELETE'])
 def remove_party(party_id):
-    party=PartyModel().remove_party(party_id)
-    if party:
-        return make_response(jsonify({
-            'message':'Ok',
-        }), 200)
-    else:
-        return make_response(jsonify({
-            'message':'Error party could not be deleted'
-        }))
+    if isinstance(party_id, int):
+        party=PartyModel().remove_party(party_id)
+        if party:
+            return make_response(jsonify({
+                'message':'Ok',
+            }), 200)
+    return make_response(jsonify({
+        'message':'Error party could not be deleted'
+    }), 404)
 
 @my_v1.route('/party/<int:party_id>', methods = ['PATCH'])
 def Update_party(party_id):
