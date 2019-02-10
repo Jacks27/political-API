@@ -22,8 +22,6 @@ class PartyModel:
     def get_Party(self, party_id):
         if self.party:
             for party_n in self.party:
-
-                
                 if party_n.get('party_id') == party_id:
                     return party_n           
                 
