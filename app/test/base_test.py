@@ -11,6 +11,12 @@ class PoliticoV1BaseTest(unittest.TestCase):
         self.app = create_app(config_name="testing")
         self.client = self.app.test_client
         # tear down tests
+        self.add_candidate = json.dumps({         
+            'office':"1",
+            'party':'1',
+            'candidate': "1",
+             
+        })
 
         self.add_party = json.dumps({         
             'party_id':"1",
