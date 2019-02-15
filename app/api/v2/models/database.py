@@ -33,17 +33,33 @@ class DatabaseConnection:
         for query in tables_to_drop:
 
             cur.execute(query)
-            conn.commit
+            conn.commit()
 
     def fetch_single_data_row(self, query):
         """ retreives a single row of data from a table """
-        cur.execute(query)
-        fetchedRow = cur.fetchone()
-        return fetchedRow
+        try:
+            cur.execute(query)
+            fetchedRow = cur.fetchone()
+            return fetchedRow
+            
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+                   
+        
+                
+
     def save_incoming_data_or_updates(self, query):
         """ saves data passed as a query to the stated table """
-        cur.execute(query)
-        conn.commit
+        try:
+            cur.execute(query)
+            conn.commit()
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+                   
+        finally:
+            if conn is not None:
+                conn.close()
+
     def fetch_all_tables_rows(self, query):
         """ fetches all rows of data store """
         cur.execute(query)

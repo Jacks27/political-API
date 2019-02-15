@@ -18,7 +18,7 @@ def user_signup():
     firstname = data['firstname']
     lastname = data['lastname']
     othername = data['othername']
-    Email = data['email']
+    Email = data['Email']
     phoneNumber = data['phoneNumber']
     passportUrl = data['passportUrl']
     password =data['password']
@@ -35,6 +35,6 @@ def user_signup():
   "status": 201, 
   "message": "user created successfully"
   }), 201)
-
+# @my_v2.route("/signup", methods=["POST"])
 
   
