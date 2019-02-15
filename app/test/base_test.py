@@ -7,6 +7,8 @@ import unittest
 class PoliticoV1BaseTest(unittest.TestCase):
 
     def setUp(self):
+        self.app = create_app("testing")
+        self.client = self.app.test_client()
 
         self.app = create_app(config_name="testing")
         self.client = self.app.test_client
@@ -17,6 +19,16 @@ class PoliticoV1BaseTest(unittest.TestCase):
             'candidate': "1",
              
         })
+        self.success_signup = {
+            "firstname": "zonecc",
+            "lastname": "code@zonecc.cz",
+            "othername": "wesh",
+            "email": "codezonecc",
+            "phonenumber": "+09778789847",
+            "passporturl": "code@zonec",
+            "isadmin": "1",
+            "password": "$$22BBkk"
+        }
 
         self.add_party = json.dumps({         
             'party_id':"1",
