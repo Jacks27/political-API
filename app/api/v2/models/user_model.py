@@ -16,7 +16,12 @@ class User(db_conn):
     def create_new_user(self):
         """ creates/adds a new user to the users table"""
         query = """ INSERT INTO users(firstname, lastname, othername, Email,
-         phoneNumber, PassportURL, isAdmin) VALUES('{}', '{}','{}','{}', '{}', '{}', '{}')    
+         phoneNumber, PassportURL, isAdmin, password) VALUES('{}', '{}','{}','{}', '{}', '{}', '{}', '{}')    
         """.format(self.firstname , self.lastname , self.othername, self.email, self.phoneNumber,
         self.passportUrl, self.isAdmin, self.password)     
         self.save_incoming_data_or_updates(query)
+    def loging(self, email, password):
+        query =""" SELECT FROM users where Email={} AND passsword={} """.format( email, password)
+        user = self.fetch_single_data_row(query)
+        return user
+
